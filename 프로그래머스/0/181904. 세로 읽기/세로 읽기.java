@@ -8,11 +8,11 @@ class Solution {
             answer.add(sub);
         }
         
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for(String str : answer){
-            result += str.substring(c-1, c);
+            result.append(str.substring(c-1, c));
         }
         
-        return result;
+        return result.toString();
     }
 }
