@@ -1,13 +1,10 @@
-import java.util.*;
-
 class Solution {
     public String solution(String my_string, int[] indices) {
         StringBuilder answer = new StringBuilder(my_string);
-        Arrays.sort(indices);
         
-        for (int i = indices.length - 1; i >= 0; i--) {
-            answer.deleteCharAt(indices[i]);
+        for (int i : indices) {
+            answer.setCharAt(i, ' ');
         }
-        return answer.toString();
+        return answer.toString().replace(" ", "");
     }
 }
