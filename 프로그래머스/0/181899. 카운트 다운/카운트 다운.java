@@ -2,11 +2,11 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int start_num, int end_num) {
-        List<Integer> answer = new ArrayList<>();
-        for(int i = start_num; i >= end_num; i--){
-           answer.add(i);
+        int[] answer = new int[start_num - end_num +1];
+        for(int i = 0; i <= start_num - end_num; i++){
+           answer[i] = start_num -i;
         }
         
-        return answer.stream().mapToInt(Integer::intValue).toArray();
+        return answer;
     }
 }
