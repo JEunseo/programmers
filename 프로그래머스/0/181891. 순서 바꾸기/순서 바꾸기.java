@@ -2,17 +2,15 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int[] num_list, int n) {
-        List<Integer> numList = new ArrayList<>();
-        for (int num : num_list) {
-            numList.add(num);
-        }
+       int index = 0;
+       int[] answer = new int[num_list.length];
         
-        List<Integer> arr1 = numList.subList(0, n);
-        List<Integer> arr2 = numList.subList(n, num_list.length);
+        for (int i = n;i < num_list.length;i++)
+            answer[index++] = num_list[i];
         
-        List<Integer> combined = new ArrayList<>(arr2);
-        combined.addAll(arr1);
+        for (int i = 0;i < n;i++)
+            answer[index++] = num_list[i];
         
-        return combined.stream().mapToInt(Integer::intValue).toArray();
+        return answer;
     }
 }
